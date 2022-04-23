@@ -1,0 +1,104 @@
+1. Inner Join
+
+Esta es la forma mas fácil de seleccionar información de diferentes tablas, es tal vez la que mas usas a diario en tu trabajo con bases de datos. Esta union retorna todas las filas de la tabla A que coinciden en la tabla B. Es decir aquellas que están en la tabla A Y en la tabla B, si lo vemos en conjuntos la intersección entre la tabla A y la B.
+Esto lo podemos implementar de esta forma cuando estemos escribiendo las consultas:
+
+img link = https://static.platzi.com/media/user_upload/BadgesMesa%20de%20trabajo%202-5d5d1171-efd6-4f0a-88ad-a4c82b836427.jpg
+
+SELECT <columna_1> , <columna_2>,  <columna_3> ... <columna_n> 
+FROM Tabla_A A
+INNER JOIN Tabla_B B
+ON A.pk = B.pk
+
+
+
+2. Left Join
+
+Esta consulta retorna todas las filas que están en la tabla A y ademas si hay coincidencias de filas en la tabla B también va a traer esas filas.
+Esto lo podemos implementar de esta forma cuando estemos escribiendo las consultas:
+
+img link = https://static.platzi.com/media/user_upload/BadgesMesa%20de%20trabajo%202%20copia-af253277-22c6-4d8f-a005-5a0158471af8.jpg
+
+SELECT <columna_1> , <columna_2>,  <columna_3> ... <columna_n> 
+FROM Tabla_A A
+LEFT JOIN Tabla_B B
+ON A.pk = B.pk
+
+
+
+
+3. Right Join
+
+Esta consulta retorna todas las filas de la tabla B y ademas si hay filas en la tabla A que coinciden también va a traer estas filas de la tabla A.
+Esto lo podemos implementar de esta forma cuando estemos escribiendo las consultas:
+
+img link = https://static.platzi.com/media/user_upload/BadgesMesa%20de%20trabajo%202%20copia%202-182a2b23-4949-4e88-8118-bec2cc654943.jpg
+
+SELECT <columna_1> , <columna_2>,  <columna_3> ... <columna_n>
+FROM Tabla_A A
+RIGHT JOIN Tabla_B B
+ON A.pk = B.pk
+
+
+4. Outer Join
+
+Este join retorna TODAS las filas de las dos tablas. Hace la union entre las filas que coinciden entre la tabla A y la tabla B.
+Esto lo podemos implementar de esta forma cuando estemos escribiendo las consultas:
+
+img link = https://static.platzi.com/media/user_upload/BadgesMesa%20de%20trabajo%202%20copia%203-07f9edcc-54fa-4be4-ad32-3613b79f0815.jpg
+
+SELECT <columna_1> , <columna_2>,  <columna_3> ... <columna_n>
+FROM Tabla_A A
+FULL OUTER JOIN Tabla_B B
+ON A.pk = B.pk
+
+
+
+5. Left excluding join
+
+Esta consulta retorna todas las filas de la tabla de la izquierda, es decir la tabla A que no tienen ninguna coincidencia con la tabla de la derecha, es decir la tabla B.
+Esto lo podemos implementar de esta forma cuando estemos escribiendo las consultas:
+
+img link = https://static.platzi.com/media/user_upload/BadgesMesa%20de%20trabajo%202%20copia%204-8bed8f2c-6338-491e-b81f-119027ad8a9c.jpg
+
+
+SELECT <columna_1> , <columna_2>,  <columna_3> ... <columna_n>
+FROM Tabla_A A
+LEFT JOIN Tabla_B B
+ON A.pk = B.pk
+WHERE B.pk IS NULL
+
+
+
+
+
+6. Right Excluding join
+
+Esta consulta retorna todas las filas de la tabla de la derecha, es decir la tabla B que no tienen coincidencias en la tabla de la izquierda, es decir la tabla A.
+Esto lo podemos implementar de esta forma cuando estemos escribiendo las consultas:
+
+img link = https://static.platzi.com/media/user_upload/BadgesMesa%20de%20trabajo%202%20copia%205-abeea9a6-964f-4b52-b0a5-4f790101695a.jpg
+
+SELECT <columna_1> , <columna_2>,  <columna_3> ... <columna_n>
+FROM Tabla_A A
+RIGHT JOIN Tabla_B B
+ON A.pk = B.pk
+WHERE A.pk IS NULL
+
+
+
+
+7. Outer excluding join
+
+Esta consulta retorna todas las filas de la tabla de la izquierda, tabla A, y todas las filas de la tabla de la derecha, tabla B que no coinciden.
+Esto lo podemos implementar de esta forma cuando estemos escribiendo las consultas:
+
+img link = https://static.platzi.com/media/user_upload/BadgesMesa%20de%20trabajo%202%20copia%206-fa9ef4f5-1475-4e54-8b33-ebbdfb29df29.jpg
+
+SELECT <select_list>
+FROM Table_A A
+FULL OUTER JOIN Table_B B
+ON A.Key = B.Key
+WHERE A.Key IS NULL OR B.Key IS NULL
+
+
